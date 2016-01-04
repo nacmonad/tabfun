@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Foldertabs</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+</head>
+<style>
+
+#content {
+  background-color: #669966;
+  height: auto;
+  /*font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif; */
+  color: #efefef;
+  margin-top:10px;
+  height:320px;
+}
+
+.tabHolder {
+	margin-top:10px;
+	margin-left:0px;
+	width:35px;
+}
+.tabHolder :hover {
+	background-color:#669966;
+	color:#ffffff;
+}
+.tabHolder.current {
+
+}
+
+.sideTab {
+  background-color: #666666;
+  width: 35px;
+  height: 80px;
+  border-radius: 0px 15px 15px 0px;
+  color: #efefef;
+  position: relative;
+}
+
+.vertical-text {
+    -webkit-transform: translate3d(-50%, -50%, 0) rotate(90deg);
+    -ms-transform: translate3d(-50%, -50%, 0) rotate(90deg);
+    transform: translate3d(-50%, -50%, 0) rotate(90deg);
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    padding: 0;
+    margin: 0;
+}
+
+.nopadding {
+   padding: 0 !important;
+   margin: 10 0 0 0 !important;
+}
+
+
+.tab-content{
+	display: none;
+	background: #ededed;
+  padding: 15px;
+}
+
+.tab-content.current{
+	display: inherit;
+}
+
+.current {
+	background-color:#669966;
+}
+
+
+</style>
+<body>
+
+<div class="container">
+  <div id="content" class="col-xs-10 col-xs-offset-1 col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1">
+    <p id="tab-1" class="tab-content current">Vocent meliore ea qui, ne solum accommodare vim, eam id elit eirmod invenire. Ius integre singulis nominati eu, habeo consequat argumentum eos ea. Has tempor populo denique cu, ex pro sanctus maiestatis argumentum. Mea tation prompta assentior an, nam soluta copiosae legendos et, propriae adolescens dissentiunt et vim. Has ad timeam euismod definitiones, doctus invidunt ex usu, et gloriatur adversarium qui. No libris docendi sensibus pro.</p>
+    <p id="tab-2" class="tab-content">Vix exerci mediocritatem in, debet voluptaria interesset mei cu. His quot tation ea, eu discere insolens incorrupte vis. Quot prodesset consequuntur nec ex, quo in tantas voluptua appellantur. Postulant appellantur an vix, te qui graeco option consequuntur. Malorum ocurreret contentiones et sed, pro id dolorem percipitur cotidieque.</p>
+    <p id="tab-3" class="tab-content">Lorem ipsum dolor sit amet, munere tamquam mediocritatem et has. No vim hinc cetero scaevola, ei est ignota salutandi constituam. Qui in nusquam forensibus, eos dolore splendide democritum et, an ipsum legendos vel. Ut populo utroque pro</p>
+    <p id="tab-4" class="tab-content">Vocent meliore ea qui, ne solum accommodare vim, eam id elit eirmod invenire. Ius integre singulis nominati eu, habeo consequat argumentum eos ea. Has tempor populo denique cu, ex pro sanctus maiestatis argumentum. Mea tation prompta assentior an, nam soluta copiosae legendos et, propriae adolescens dissentiunt et vim. Has ad timeam euismod definitiones, doctus invidunt ex usu, et gloriatur adversarium qui. No libris docendi sensibus pro.</p>
+  </div>
+
+	  <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 tabHolder nopadding">
+	    <div class="sideTab"><p id="tab-1" class="vertical-text">home</p></div>
+	    <div class="sideTab"><p id="tab-2" class="vertical-text">bl.ocks</p></div>
+	    <div class="sideTab"><p id="tab-3" class="vertical-text">about</p></div>
+	    <div class="sideTab"><p id="tab-4" class="vertical-text">contact</p></div>
+	  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<script>
+
+$(document).ready(function(){
+	
+	$('.sideTab').click(function(){
+		
+		var tab_id = $('p',this).attr('id');
+		console.log(tab_id);
+		$('.sideTab').removeClass('current');
+		$('.tab-content').removeClass('current');
+
+		$(this).addClass('current');
+		$("#"+tab_id).addClass('current');
+	})
+
+})
+
+</script>
+</body>
+</html>
